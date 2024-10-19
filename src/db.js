@@ -3,11 +3,10 @@ const { db } = require('./config');
 
 // Configurar el pool de conexiones
 const pool = new Pool({
-  user: db.user,
-  host: db.host,
-  database: db.database,
-  password: db.password,
-  port: db.port
+  connectionString: db.connectionString,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 module.exports = pool;
