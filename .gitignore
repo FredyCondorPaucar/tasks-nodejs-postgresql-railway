@@ -1,0 +1,9 @@
+# modulos de node
+node_modules
+
+# Datos sensibles
+.env
+
+database
+
+arrancar-proyecto.bat
