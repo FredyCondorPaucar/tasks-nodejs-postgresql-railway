@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require("cors");
 const { serverPort } = require('./config');
+const initDb = require('./initDb'); 
 
 const app = express();
 console.log('Servidor iniciando...')
@@ -41,6 +42,8 @@ app.use((error, req, res, next) => {
 
 // Configurar Puerto a escuchar
 const PORT = serverPort;
+
+initDb(); // Llama al script para inicializar la base de datos
 
 // Configurar el puerto que va escuchar el servidor
 app.listen(PORT, ()=>{    

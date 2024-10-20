@@ -3,10 +3,7 @@ const { db } = require('./config');
 
 // Configurar el pool de conexiones
 const pool = new Pool({
-  connectionString: db.connectionString,
-    ssl: {
-        rejectUnauthorized: false
-    }
+  connectionString: db.connectionString    
 });
 
 module.exports = pool;
